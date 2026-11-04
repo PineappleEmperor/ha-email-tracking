@@ -1,0 +1,54 @@
+{
+  "entity": {
+    "button": {
+      "rescan": {
+        "default": "mdi:email-sync"
+      }
+    },
+    "calendar": {
+      "deliveries": {
+        "default": "mdi:truck-delivery"
+      }
+    },
+    "sensor": {
+      "amazon": {
+        "default": "mdi:package-variant-closed"
+      },
+      "dhl": {
+        "default": "mdi:package-variant-closed"
+      },
+      "dpd": {
+        "default": "mdi:package-variant-closed"
+      },
+      "dx": {
+        "default": "mdi:package-variant-closed"
+      },
+      "evri": {
+        "default": "mdi:package-variant-closed"
+      },
+      "fedex": {
+        "default": "mdi:package-variant-closed"
+      },
+      "next_delivery": {
+        "default": "mdi:truck-fast"
+      },
+      "rave": {
+        "default": "mdi:package-variant-closed"
+      },
+      "royal_mail": {
+        "default": "mdi:package-variant-closed"
+      },
+      "tubby_toms": {
+        "default": "mdi:package-variant-closed"
+      },
+      "ups": {
+        "default": "mdi:package-variant-closed"
+      }
+    }
+  },
+  "services": {
+    "rescan": {
+      "service": "mdi:email-sync"
+    }
+  }
+}

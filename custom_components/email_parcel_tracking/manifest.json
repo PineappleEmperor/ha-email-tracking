@@ -1,0 +1,15 @@
+{
+  "domain": "email_parcel_tracking",
+  "name": "Email Parcel Tracking",
+  "after_dependencies": ["email_imap"],
+  "codeowners": ["@PineappleEmperor"],
+  "config_flow": true,
+  "dependencies": [],
+  "documentation": "https://github.com/PineappleEmperor/ha-email-tracking",
+  "integration_type": "service",
+  "iot_class": "calculated",
+  "issue_tracker": "https://github.com/PineappleEmperor/ha-email-tracking/issues",
+  "quality_scale": "platinum",
+  "requirements": [],
+  "version": "0.1.0"
+}

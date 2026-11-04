@@ -1,0 +1,85 @@
+rules:
+  # --- Bronze ---
+  action-setup: done
+  appropriate-polling:
+    status: exempt
+    comment: Push model — driven by email_imap_new_email events, no polling.
+  brands: done
+  common-modules: done
+  config-flow-test-coverage: done
+  config-flow: done
+  dependency-transparency: done
+  docs-actions: done
+  docs-high-level-description: done
+  docs-installation-instructions: done
+  docs-removal-instructions: done
+  docs-triggers:
+    status: exempt
+    comment: Provides no triggers of its own; automations use entity state triggers.
+  docs-conditions:
+    status: exempt
+    comment: Provides no conditions of its own; automations use entity state conditions.
+  entity-event-setup: done
+  entity-unique-id: done
+  has-entity-name: done
+  runtime-data: done
+  test-before-configure:
+    status: exempt
+    comment: >-
+      No credentials of its own to validate; auth belongs to email-ha. Setup
+      readiness is checked in test-before-setup instead.
+  test-before-setup: done
+  unique-config-entry: done
+  # --- Silver ---
+  config-entry-unloading: done
+  log-when-unavailable: done
+  entity-unavailable: done
+  action-exceptions: done
+  reauthentication-flow:
+    status: exempt
+    comment: Integration holds no credentials; email-ha owns authentication.
+  parallel-updates: done
+  test-coverage: done
+  integration-owner: done
+  docs-installation-parameters:
+    status: exempt
+    comment: Setup is a single confirmation step with no parameters.
+  docs-configuration-parameters: done
+  # --- Gold ---
+  entity-translations: done
+  entity-device-class: done
+  devices: done
+  entity-category: done
+  entity-disabled-by-default: done
+  discovery:
+    status: exempt
+    comment: Sources data from another integration; nothing to discover.
+  stale-devices: done
+  diagnostics: done
+  exception-translations: done
+  icon-translations: done
+  reconfiguration-flow:
+    status: exempt
+    comment: Entry carries no data; all settings live in the options flow.
+  dynamic-devices:
+    status: exempt
+    comment: One static service device; never added or removed at runtime.
+  discovery-update-info:
+    status: exempt
+    comment: No discovery.
+  repair-issues: done
+  docs-use-cases: done
+  docs-supported-devices: done
+  docs-supported-functions: done
+  docs-data-update: done
+  docs-known-limitations: done
+  docs-troubleshooting: done
+  docs-examples: done
+  # --- Platinum ---
+  async-dependency:
+    status: exempt
+    comment: No external dependency; data comes via an in-process HA service.
+  inject-websession:
+    status: exempt
+    comment: Performs no HTTP; sources e-mails through email-ha's service.
+  strict-typing: done

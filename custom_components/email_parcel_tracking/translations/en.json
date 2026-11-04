@@ -1,0 +1,102 @@
+{
+  "config": {
+    "abort": {
+      "already_configured": "Email Parcel Tracking is already set up."
+    },
+    "step": {
+      "user": {
+        "description": "Track parcels by scanning your e-mail through the Email HA integration. Set up Email HA first, then confirm below.",
+        "title": "Email Parcel Tracking"
+      }
+    }
+  },
+  "entity": {
+    "button": {
+      "rescan": {
+        "name": "Rescan inbox"
+      }
+    },
+    "calendar": {
+      "deliveries": {
+        "name": "Deliveries"
+      }
+    },
+    "sensor": {
+      "amazon": {
+        "name": "Amazon"
+      },
+      "dhl": {
+        "name": "DHL"
+      },
+      "dpd": {
+        "name": "DPD"
+      },
+      "dx": {
+        "name": "DX"
+      },
+      "evri": {
+        "name": "Evri"
+      },
+      "fedex": {
+        "name": "FedEx"
+      },
+      "next_delivery": {
+        "name": "Next delivery"
+      },
+      "rave": {
+        "name": "Rave"
+      },
+      "royal_mail": {
+        "name": "Royal Mail"
+      },
+      "tubby_toms": {
+        "name": "Tubby Toms"
+      },
+      "ups": {
+        "name": "UPS"
+      }
+    }
+  },
+  "exceptions": {
+    "email_ha_unavailable": {
+      "message": "The Email HA query_emails action is unavailable. Set up Email HA first."
+    },
+    "not_loaded": {
+      "message": "Email Parcel Tracking is not set up, so there is nothing to rescan."
+    },
+    "query_failed": {
+      "message": "Email HA could not search the mailbox: {error}"
+    },
+    "rescan_failed": {
+      "message": "Could not rescan the inbox: {error}"
+    }
+  },
+  "issues": {
+    "email_ha_missing": {
+      "description": "Email Parcel Tracking scans e-mail through the Email HA integration (email_imap), which is not currently available. Install and set up Email HA, then reload Email Parcel Tracking.",
+      "title": "Email HA integration required"
+    }
+  },
+  "options": {
+    "step": {
+      "init": {
+        "data": {
+          "folder": "Mail folder to scan",
+          "keep_delivered_days": "Keep delivered parcels (days)",
+          "lookback_days": "Startup scan lookback (days)"
+        },
+        "data_description": {
+          "folder": "The Email HA mail folder searched for parcel e-mails.",
+          "keep_delivered_days": "How long a delivered parcel stays tracked before it is removed.",
+          "lookback_days": "How many days back the scan at startup searches."
+        }
+      }
+    }
+  },
+  "services": {
+    "rescan": {
+      "description": "Re-scan the inbox for parcel e-mails now.",
+      "name": "Rescan"
+    }
+  }
+}
