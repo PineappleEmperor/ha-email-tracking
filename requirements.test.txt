@@ -8,7 +8,7 @@
 # Which HA release a given pin carries, and its Python floor, is on
 # pypi.org/project/pytest-homeassistant-custom-component. No mapping is written
 # here on purpose: Dependabot moves the pin and never a comment beside it.
-pytest-homeassistant-custom-component==0.13.373
+pytest-homeassistant-custom-component==0.13.375
 
 
 # Add integration-specific test deps below (e.g. a fake transport, respx,
