@@ -1,0 +1,45 @@
+# Local hooks for a Home Assistant custom integration. Copy verbatim.
+#
+# Taken from Home Assistant core's .pre-commit-config.yaml, at core's own pins.
+#
+# Left out: the `repo: local` block, since every hook in it runs a script under core's
+# script/ directory; zizmor; and the two hooks core runs at the manual stage only.
+# Changed: every filter, exclude and codespell word that names a path or a word of core's
+# own is dropped; codespell skips a built panel bundle; no-commit-to-branch guards main.
+repos:
+  - repo: https://github.com/astral-sh/ruff-pre-commit
+    rev: v0.16.9
+    hooks:
+      - id: ruff-check
+        args:
+          - --fix
+      - id: ruff-format
+  - repo: https://github.com/codespell-project/codespell
+    rev: v2.4.3
+    hooks:
+      - id: codespell
+        args:
+          - --ignore-words-list=hass,nd
+          - --skip="./.*,*.csv,*.json,*.ambr"
+          - --quiet-level=2
+        exclude_types: [csv, json, html]
+        exclude: ^custom_components/[^/]+/panel/
+  - repo: https://github.com/pre-commit/pre-commit-hooks
+    rev: v6.0.0
+    hooks:
+      - id: check-json
+        exclude: (.vscode|.devcontainer)
+      - id: no-commit-to-branch
+        args:
+          - --branch=main
+  - repo: https://github.com/adrienverge/yamllint.git
+    rev: v1.38.0
+    hooks:
+      - id: yamllint
+  - repo: https://github.com/rbubley/mirrors-prettier
+    rev: v3.6.2
+    hooks:
+      - id: prettier
+        additional_dependencies:
+          - prettier@3.6.2
+          - prettier-plugin-sort-json@4.2.0

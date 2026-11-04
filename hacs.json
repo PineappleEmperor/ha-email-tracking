@@ -1,0 +1,7 @@
+{
+  "name": "Email Parcel Tracking",
+  "content_in_root": false,
+  "zip_release": true,
+  "filename": "email_parcel_tracking.zip",
+  "homeassistant": "2026.10.0"
+}

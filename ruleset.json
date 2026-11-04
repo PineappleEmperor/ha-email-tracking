@@ -1,0 +1,55 @@
+{
+  "name": "Protect main",
+  "target": "branch",
+  "enforcement": "active",
+  "conditions": {
+    "ref_name": {
+      "include": [
+        "~DEFAULT_BRANCH"
+      ],
+      "exclude": []
+    }
+  },
+  "rules": [
+    {
+      "type": "deletion"
+    },
+    {
+      "type": "non_fast_forward"
+    },
+    {
+      "type": "required_status_checks",
+      "parameters": {
+        "strict_required_status_checks_policy": true,
+        "do_not_enforce_on_create": false,
+        "required_status_checks": [
+          {
+            "context": "pr / CC labelling"
+          },
+          {
+            "context": "pr / CC label validation"
+          },
+          {
+            "context": "lint / CC title validation"
+          },
+          {
+            "context": "Hassfest manifest validation"
+          },
+          {
+            "context": "HACS validation"
+          },
+          {
+            "context": "validate / Python validation"
+          },
+          {
+            "context": "audit / ha-integration conformance check"
+          },
+          {
+            "context": "Dependency review"
+          }
+        ]
+      }
+    }
+  ],
+  "bypass_actors": []
+}

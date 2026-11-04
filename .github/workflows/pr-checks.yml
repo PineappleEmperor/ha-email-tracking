@@ -1,0 +1,17 @@
+name: PR Checks
+
+on:
+  pull_request_target:
+    types: [opened, reopened, synchronize, edited]
+
+permissions:
+  contents: read
+  pull-requests: write
+
+concurrency:
+  group: pr-checks-${{ github.event.pull_request.number }}
+  cancel-in-progress: true
+
+jobs:
+  pr:
+    uses: PineappleEmperor/release-flow/.github/workflows/pr-checks.yml@372a07e572eb870bf6a29f1cecf1118927dcbb91 # v1.2.0

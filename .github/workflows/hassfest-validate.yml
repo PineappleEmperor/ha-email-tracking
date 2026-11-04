@@ -1,0 +1,23 @@
+name: Hassfest
+
+# Documented under *Step 2: Take each file from its source* in the ha-integration
+# skill's reference/github-actions.md.
+on:
+  push:
+    branches: [main]
+  pull_request:
+  schedule:
+    - cron: "0 0 * * *"
+
+permissions:
+  contents: read
+
+jobs:
+  hassfest:
+    name: Hassfest manifest validation
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          persist-credentials: false
+      - uses: home-assistant/actions/hassfest@master

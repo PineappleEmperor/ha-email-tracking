@@ -1,0 +1,33 @@
+name: Stale
+
+# Marks only. Closing an issue nobody has answered loses the report and teaches
+# people not to file; a label is a nudge and stays searchable.
+on:
+  schedule:
+    - cron: '30 3 * * 1'
+  workflow_dispatch:
+
+permissions:
+  issues: write
+  pull-requests: write
+
+jobs:
+  stale:
+    name: Mark stale
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/stale@4391f3da665fdf50b6810c1a66712fb9ba21aa93 # v11.0.0
+        with:
+          days-before-stale: 60
+          # -1 disables closing entirely, for both issues and PRs.
+          days-before-close: -1
+          stale-issue-label: stale
+          stale-pr-label: stale
+          stale-issue-message: >
+            No activity for 60 days. Still relevant? A comment clears the label.
+            Nothing is closed automatically.
+          stale-pr-message: >
+            No activity for 60 days. A comment or a push clears the label.
+            Nothing is closed automatically.
+          exempt-issue-labels: pinned,security
+          exempt-pr-labels: pinned,security

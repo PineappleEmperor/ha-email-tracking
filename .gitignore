@@ -1,0 +1,28 @@
+# Python
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.ruff_cache/
+.mypy_cache/
+.coverage
+coverage.json
+
+# Environments
+.venv/
+venv/
+
+# Repo-local scratch: clones, fixtures and throwaway copies
+.tmp/
+
+# Panel repos only, and harmless in the rest: the first install in frontend/ writes a
+# tree tens of megabytes wide, and a `git add -A` after it commits the lot.
+node_modules/
+
+# Home Assistant test/dev artefacts
+.storage/
+home-assistant.log*
+home-assistant_v2.db*
+
+# Local, environment-specific notes that must never be committed — e.g. a
+# device map kept beside the logs, which holds a home's IP/device layout.
+device_map.md

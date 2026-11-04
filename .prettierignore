@@ -1,0 +1,8 @@
+# Copy verbatim. Markdown is left alone, as core leaves it; core's other entries name paths
+# of its own and are dropped. That includes its translations entry: here translations/en.json
+# is the integration's own source, written by hand. The rest are files copied from a source
+# or built from one, which a reformat would make differ from it.
+*.md
+.github/
+ruleset.json
+custom_components/*/panel/
