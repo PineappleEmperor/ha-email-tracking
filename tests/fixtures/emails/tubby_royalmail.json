@@ -1,0 +1,16 @@
+[
+  {
+    "uid": 1,
+    "sender": "info@tubbytoms.com",
+    "subject": "Order #12345 received",
+    "body": "Thanks for your order",
+    "days_ago": 3
+  },
+  {
+    "uid": 2,
+    "sender": "no-reply@royalmail.com",
+    "subject": "Your Royal Mail parcel from Tubby Toms Ltd. is on its way",
+    "body": "Tracking AB123456789GB",
+    "days_ago": 1
+  }
+]
